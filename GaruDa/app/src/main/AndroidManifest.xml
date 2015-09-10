@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ganesh.garuda" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+/ For SkyDrive
+    <uses-permission android:name="com.microsoft.skydrive.content.MetadataContentProvider" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <permission
+        android:name="com.example.ganesh.garuda.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.ganesh.garuda.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".video"
+            android:label="@string/title_activity_video" >
+            <intent-filter>
+                <action android:name="com.example.ganesh.garuda.video" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".capture"
+            android:label="@string/title_activity_capture" >
+            <intent-filter>
+                <action android:name="com.example.ganesh.garuda.capture" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".about"
+            android:label="@string/title_activity_about" >
+            <intent-filter>
+                <action android:name="com.example.ganesh.garuda.about" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".connectivity"
+            android:label="@string/title_activity_connectivity" >
+            <intent-filter>
+                <action android:name="com.example.ganesh.garuda.connectivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.example.ganesh.garuda.MESSAGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ImageChooserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VideoChooserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MediaChooserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FileChooserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FragmentImageChooserActivity"
+            android:configChanges="screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="ccbe3957847c84647fbf4938cf6adb0da0a5583e" />
+
+        <receiver
+            android:name="com.pushbots.google.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.example.ganesh.garuda" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.pushbots.push.DefaultPushHandler" />
+
+        <service android:name="com.pushbots.push.GCMIntentService" />
+
+        <activity
+            android:name=".stream"
+            android:label="@string/title_activity_stream" >
+            <intent-filter>
+                <action android:name="com.example.ganesh.garuda.stream" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".virtual_stream"
+            android:label="@string/title_activity_virtual_stream" >
+            <intent-filter>
+                <action android:name="com.example.ganesh.garuda.virtual_stream" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".opencamera"
+            android:label="@string/title_activity_opencamera" >
+            <intent-filter>
+                <action android:name="com.example.ganesh.garuda.opencamera" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".killcamera"
+            android:label="@string/title_activity_killcamera" >
+	    <intent-filter>
+                <action android:name="com.example.ganesh.garuda.killcamera" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,15 @@
+Add Jsch Library to Android Studio
+1.Place .jar File in libs Folder 
+I have already placed 
+/home/ganesh/AndroidStudioProjects/GaruDa/app/libs/jsch-0147.jar
+2.In build.gradle File 
+Add Line
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.0'
+//Add Below Line
+    compile files ('libs/jsch-0147.jar')
+}
+3.Run SyncProjectWithFradleFile Option beside AVD Emulator creator option .
+
+
