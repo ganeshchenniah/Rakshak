@@ -1,2 +1,0 @@
-raspivid --width 640 --height 480 --timeout 10000 -vf -hf --output /home/pi/video/vid.h264
-MP4Box -add /home/pi/video/vid.h264 /home/pi/video/vid$(date +'-%m%d%y-%H%M%S').mp4
